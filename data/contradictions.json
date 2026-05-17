@@ -7,56 +7,10 @@
     "side_a_label": "AI as agency amplifier",
     "side_b_label": "AI as replacement pressure",
     "side_a_claims": [
-      "claim:call-gue-hallucination-human-just-people-stupid-think-will",
-      "claim:amazing-any-come-current-deep-economic-human-like-make-other-people-philosophical-pressure",
-      "claim:can-how-human-one-people-project-really-region-therefore-together-translate-way-well-work",
-      "claim:already-come-coming-company-everything-human-into-people-they-will-would",
-      "claim:corporate-human-needed-not-office-people-would"
+      "claim:agency-ai-automate-core-creativity-emotional-extend-flourishing-how-human-idea-labor-learn"
     ],
     "side_b_claims": [
-      "claim:bad-inherently-mindset-need-people-proce-replace-replacement-somehow-then-thought-when",
-      "claim:also-another-asked-but-can-completely-didn-guy-hi-know-replace-replacement-skill",
-      "claim:agency-ai-automate-core-creativity-emotional-extend-flourishing-how-human-idea-labor-learn",
       "claim:abundance-ai-automation-economic-institution-intelligence-job-lo-need-new-shock"
-    ]
-  },
-  {
-    "id": "contradiction:fearless-economy-vs-market-signal",
-    "topic": "Fearless Economy and Zero-Profit Systems",
-    "title": "Fearless economy vs market signal",
-    "question": "Which coordination signals can replace fear and profit without losing useful feedback about real needs?",
-    "side_a_label": "Remove fear and extraction",
-    "side_b_label": "Keep coordination and price signals",
-    "side_a_claims": [
-      "claim:allow-asian-because-can-grocery-learn-lot-people-profit-store-zero"
-    ],
-    "side_b_claims": [
-      "claim:can-earn-money-passion-you",
-      "claim:like-money-pay-signature-will",
-      "claim:amazing-connection-earn-effort-host-house-make-money-new-party-your",
-      "claim:connection-earn-happen-make-money-situation-win-win",
-      "claim:ahead-all-can-change-chase-concept-eliminate-everything-gone-happen-meaning-not-nothing-pr"
-    ]
-  },
-  {
-    "id": "contradiction:acceptance-vs-change",
-    "topic": "Self, Ego, Acceptance, and Vipassana",
-    "title": "Acceptance vs change",
-    "question": "When is acceptance enough, and when does clear seeing need to become deliberate intervention?",
-    "side_a_label": "Acceptance and observation",
-    "side_b_label": "Transformation and intervention",
-    "side_a_claims": [
-      "claim:align-aligned-analogy-can-change-distance-idea-ideological-really-system-these-vipassana-w",
-      "claim:apply-because-book-company-dig-going-had-health-how-idea-into-make-only-philosophy-plu-sec",
-      "claim:can-connect-get-into-meditation-then-thing-vipassan-vipassana-well",
-      "claim:center-change-evidence-follow-growth-just-like-mediation-meditation-model-see-similar-stor"
-    ],
-    "side_b_claims": [
-      "claim:again-also-change-could-fulfilment-how-journey-now-one-probably-right-struggle-thing-towar",
-      "claim:busine-can-change-community-experience-give-going-podcast-proce-right-short-them-thought-t",
-      "claim:can-change-closed-they-you",
-      "claim:any-change-feel-same-situation-still-there-way-which-will-you",
-      "claim:because-become-change-glow-it-more-radiance-room-selfle-taking-think-will"
     ]
   }
 ]

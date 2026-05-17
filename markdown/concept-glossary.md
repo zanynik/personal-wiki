@@ -4,7 +4,7 @@ Short handles for recurring concepts in the notes.
 
 ## Zero Profit
 
-Appears approximately 106 times in the indexed corpus.
+Appears approximately 64 times in the indexed corpus.
 
 Related pages: [[Fearless Economy and Zero-Profit Systems]]
 
@@ -22,7 +22,13 @@ Related pages: [[AI and Human Flourishing]], [[Democracy, Governance, and Collec
 
 ## Vibe Coding
 
-Appears approximately 3 times in the indexed corpus.
+Appears approximately 4 times in the indexed corpus.
+
+Related pages: [[AI and Human Flourishing]]
+
+## Maternal Ai
+
+Appears approximately 1 times in the indexed corpus.
 
 Related pages: [[AI and Human Flourishing]]
 
@@ -34,19 +40,19 @@ Related pages: [[Community, Cities, and Future Villages]]
 
 ## Vipassana
 
-Appears approximately 47 times in the indexed corpus.
+Appears approximately 95 times in the indexed corpus.
 
 Related pages: [[Self, Ego, Acceptance, and Vipassana]]
 
 ## Ego
 
-Appears approximately 77 times in the indexed corpus.
+Appears approximately 86 times in the indexed corpus.
 
 Related pages: [[Self, Ego, Acceptance, and Vipassana]]
 
 ## Nostr
 
-Appears approximately 53 times in the indexed corpus.
+Appears approximately 57 times in the indexed corpus.
 
 Related pages: [[Media, Social Networks, and Information Flow]]
 
@@ -64,7 +70,7 @@ Related pages: [[Systems, Root Nodes, and Leverage Points]]
 
 ## Fear
 
-Appears approximately 114 times in the indexed corpus.
+Appears approximately 125 times in the indexed corpus.
 
 Related pages: [[Fearless Economy and Zero-Profit Systems]], [[Self, Ego, Acceptance, and Vipassana]]
 
@@ -76,7 +82,7 @@ Related pages: [[Self, Ego, Acceptance, and Vipassana]]
 
 ## Admiration
 
-Appears approximately 11 times in the indexed corpus.
+Appears approximately 13 times in the indexed corpus.
 
 Related pages: [[Relationships, Love, and Emotional Systems]]
 
@@ -88,7 +94,7 @@ Related pages: [[AI and Human Flourishing]], [[Work, Founders, and Building]]
 
 ## Community
 
-Appears approximately 174 times in the indexed corpus.
+Appears approximately 181 times in the indexed corpus.
 
 Related pages: [[Community, Cities, and Future Villages]]
 
@@ -100,6 +106,6 @@ Related pages: [[Systems, Root Nodes, and Leverage Points]]
 
 ## Founder
 
-Appears approximately 29 times in the indexed corpus.
+Appears approximately 27 times in the indexed corpus.
 
 Related pages: [[Learning, Intelligence, and Creativity]], [[Work, Founders, and Building]]

@@ -39,4 +39,3 @@ A rough formula:
 ## What This Wiki Is For
 
 This wiki is not a final theory. It is a map of live intellectual territory: concepts that recur, questions that keep returning, and possible projects waiting to be shaped into essays, products, experiments, or conversations.
-

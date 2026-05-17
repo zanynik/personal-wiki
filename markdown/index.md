@@ -7,6 +7,7 @@ A compiled wiki generated from raw text notes and Voice Memo transcripts in `Sec
 - [[Big Picture Synthesis]]
 - [[Concept Glossary]]
 - [[Topic Model Appendix]]
+- [[Source Index]]
 
 ## Main Topic Pages
 
@@ -26,8 +27,8 @@ A compiled wiki generated from raw text notes and Voice Memo transcripts in `Sec
 ## Corpus
 
 - Raw text/Markdown notes indexed: 191
-- Voice memo transcripts indexed: 233
-- Total source documents indexed: 424
+- Voice memo transcripts indexed: 261
+- Total source documents indexed: 452
 
 ## How To Use
 

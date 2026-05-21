@@ -38,7 +38,7 @@
   <main class="content graph-content">
     <article class="graph-article">
       <h1>Truth Graph Explorer</h1>
-      <p>Select a start truth and an end truth. The explorer finds a directed causal path when one exists, falls back to a conceptual bridge when needed, and drafts a logical essay from the selected relationship.</p>
+      <p>This explorer uses a curated manual graph built from a hand-read synthesis of the notes. Select a start truth and an end truth to inspect the causal chain and essay structure implied by that reading.</p>
       <section class="graph-controls" aria-label="Truth node selection">
         <label for="start-node">Start node</label>
         <select id="start-node"></select>
@@ -46,7 +46,7 @@
         <select id="end-node"></select>
         <button id="find-path" type="button">Build essay</button>
       </section>
-      <section class="graph-status" id="graph-status">Loading data/truth_graph.json...</section>
+      <section class="graph-status" id="graph-status">Loading data/curated_truth_graph.json...</section>
       <section class="graph-stage" aria-label="Selected graph path">
         <svg id="graph-svg" role="img" aria-label="Truth graph path visualization"></svg>
       </section>
@@ -56,6 +56,6 @@
   </main>
   <script src="assets/search-index.js"></script>
   <script src="assets/site.js"></script>
-  <script src="assets/truth-graph-explorer.js" data-graph-url="data/truth_graph.json"></script>
+  <script src="assets/truth-graph-explorer.js" data-graph-url="data/curated_truth_graph.json"></script>
 </body>
 </html>

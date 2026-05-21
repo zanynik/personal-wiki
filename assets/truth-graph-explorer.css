@@ -54,6 +54,11 @@
 }
 .graph-path ol { padding-left: 22px; }
 .graph-path li { margin: 9px 0; }
+.graph-note {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+}
 .graph-essay {
   margin-top: 24px;
   padding-top: 8px;

@@ -1,5 +1,5 @@
 const script = document.currentScript;
-const graphUrl = script?.dataset.graphUrl || "data/truth_graph.json";
+const graphUrl = script?.dataset.graphUrl || "data/curated_truth_graph.json";
 const startSelect = document.getElementById("start-node");
 const endSelect = document.getElementById("end-node");
 const findButton = document.getElementById("find-path");
@@ -11,6 +11,8 @@ const svg = document.getElementById("graph-svg");
 let truthNodes = new Map();
 let directed = new Map();
 let undirected = new Map();
+let edgeNotes = new Map();
+let essaysByEndNode = new Map();
 let graphMode = "directed";
 
 function textOf(id) {
@@ -21,9 +23,20 @@ function supportOf(id) {
   return truthNodes.get(id)?.support_count || 0;
 }
 
+function metaLabel(id) {
+  const node = truthNodes.get(id);
+  if (!node) return id;
+  if (node.source === "manual-curated") return node.id;
+  return "Derived node";
+}
+
 function addEdge(map, source, target) {
   if (!map.has(source)) map.set(source, []);
   map.get(source).push(target);
+}
+
+function edgeKey(source, target) {
+  return `${source}=>${target}`;
 }
 
 function shortestPath(start, end, adjacency) {
@@ -60,7 +73,7 @@ function findBestPath(start, end) {
 }
 
 function optionLabel(node) {
-  return `${node.statement} (${node.support_count})`;
+  return `${node.id} — ${node.statement}`;
 }
 
 function populateControls(nodes, edges) {
@@ -133,7 +146,7 @@ function renderGraph(path) {
     support.setAttribute("font-family", "ui-sans-serif, system-ui, sans-serif");
     support.setAttribute("font-size", "11");
     support.setAttribute("fill", "#6b675d");
-    support.textContent = `${supportOf(id)} source occurrence${supportOf(id) === 1 ? "" : "s"}`;
+    support.textContent = metaLabel(id);
     group.appendChild(support);
     svg.appendChild(group);
   });
@@ -165,12 +178,28 @@ function renderPath(path) {
     : graphMode === "bridge"
       ? "Conceptual bridge through connected causal edges"
       : "No graph bridge found; essay compares the selected truths";
-  pathEl.innerHTML = `<h2>${modeLabel}</h2><ol>${path.map(id => `<li>${escapeHtml(textOf(id))}</li>`).join("")}</ol>`;
+  const items = path.map((id, index) => {
+    if (index === path.length - 1) return `<li><strong>${escapeHtml(textOf(id))}</strong></li>`;
+    const next = path[index + 1];
+    const note = edgeNotes.get(edgeKey(id, next));
+    const noteHtml = note ? `<div class="graph-note">${escapeHtml(note)}</div>` : "";
+    return `<li><strong>${escapeHtml(textOf(id))}</strong>${noteHtml}</li>`;
+  }).join("");
+  pathEl.innerHTML = `<h2>${modeLabel}</h2><ol>${items}</ol>`;
 }
 
 function renderEssay(path) {
   const start = textOf(path[0]);
   const end = textOf(path[path.length - 1]);
+  const curatedEssay = essaysByEndNode.get(path[path.length - 1]);
+  if (curatedEssay && graphMode === "directed") {
+    const paragraphs = curatedEssay.markdown
+      .split(/\n\s*\n/)
+      .map(block => `<p>${escapeHtml(block.replace(/\s+/g, " ").trim())}</p>`)
+      .join("");
+    essayEl.innerHTML = `<h2>${escapeHtml(curatedEssay.title)}</h2>${paragraphs}`;
+    return;
+  }
   const title = `Logical Essay: ${start.slice(0, 72)}`;
   let body = "";
   if (path.length === 1) {
@@ -178,7 +207,11 @@ function renderEssay(path) {
   } else if (graphMode === "directed") {
     const transitions = path.slice(0, -1).map((id, index) => {
       const next = path[index + 1];
-      return `<p>If ${escapeHtml(textOf(id))}, then the graph treats it as producing or enabling this effect: ${escapeHtml(textOf(next))}.</p>`;
+      const note = edgeNotes.get(edgeKey(id, next));
+      const connector = note
+        ? ` The manual graph states the link as: ${escapeHtml(note)}.`
+        : "";
+      return `<p>If ${escapeHtml(textOf(id))}, then the graph treats it as producing or enabling this effect: ${escapeHtml(textOf(next))}.${connector}</p>`;
     }).join("");
     body = `<p>The selected start node is not just an isolated idea. In this graph it begins a causal chain that points toward the selected end node.</p>${transitions}<p>The essay structure is therefore: begin with ${escapeHtml(start)}, explain each intermediate pressure, and conclude with ${escapeHtml(end)} as the downstream consequence.</p>`;
   } else if (graphMode === "bridge") {
@@ -221,14 +254,17 @@ fetch(graphUrl)
   .then(graph => {
     const nodes = graph.nodes.filter(node => node.type === "truth");
     const edges = graph.edges.filter(edge => edge.type === "causes");
+    const essays = graph.essays || [];
     truthNodes = new Map(nodes.map(node => [node.id, node]));
+    essaysByEndNode = new Map(essays.map(essay => [essay.end_node, essay]));
     for (const edge of edges) {
       addEdge(directed, edge.source, edge.target);
       addEdge(undirected, edge.source, edge.target);
       addEdge(undirected, edge.target, edge.source);
+      edgeNotes.set(edgeKey(edge.source, edge.target), edge.note || "");
     }
     populateControls(nodes, edges);
-    statusEl.textContent = `${nodes.length.toLocaleString()} truth nodes and ${edges.length.toLocaleString()} cause-effect edges loaded.`;
+    statusEl.textContent = `${nodes.length.toLocaleString()} curated truth nodes and ${edges.length.toLocaleString()} cause-effect edges loaded.`;
     buildSelection();
   })
   .catch(error => {
